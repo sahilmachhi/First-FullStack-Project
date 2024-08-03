@@ -9,7 +9,9 @@ app.use(cors())
 
 app.use("/api", Router)
 
-app.listen(5000, () => {
-    console.log("port is running on 5000")
+const port = process.env.PORT || 5000
+
+app.listen(port, () => {
+    console.log(`port is running on ${port}`)
     connectDB()
 })
